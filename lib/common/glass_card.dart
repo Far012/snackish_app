@@ -18,20 +18,68 @@ class GlassCardWidget extends StatelessWidget {
           borderColor: const Color(0x80FFFFFF),
           color: const Color(0x33FFFFFF),
           gradient: null,
-          alignment: Alignment.center,
-          child: SizedBox(
-            width: 310,
-            height: 84,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20, left: 20),
-              child: const Text(
-                "Angi's Yummy Burger",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Angi's Yummy Burger",
+                      style: TextStyle(
+                        fontFamily: "SF Pro Text",
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          "assets/grafiken/star.png",
+                          width: 15,
+                          height: 13,
+                          color: const Color(0xFFed80b8),
+                        ),
+                        const SizedBox(width: 2),
+                        const Text(
+                          "4.8",
+                          style: TextStyle(
+                            fontFamily: "SF Pro Text",
+                            color: Colors.white,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              ),
+
+                const SizedBox(height: 6),
+                const Text(
+                  "Delish vegan burger\nthat tastes like heaven",
+                  style: TextStyle(
+                    fontFamily: "SF Pro Text",
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  "₳ 13.99",
+                  style: TextStyle(
+                    fontFamily: "SF Pro Text",
+                    fontSize: 15,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             ),
           ),
         ),

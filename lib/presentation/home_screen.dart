@@ -23,7 +23,7 @@ class Homescreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 75, left: 20),
+            padding: const EdgeInsets.only(top: 75, left: 20, right: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
