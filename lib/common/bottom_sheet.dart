@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
+import 'package:snack/common/size_selector.dart';
 import 'package:snack/data/item.dart';
 
 class BottomSheetWidget extends StatelessWidget {
@@ -22,24 +23,22 @@ class BottomSheetWidget extends StatelessWidget {
                 color: Color(0xFF2F2B22),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
               ),
-              padding: const EdgeInsets.fromLTRB(24, 100, 24, 80),
+              padding: const EdgeInsets.only(
+                left: 24,
+                top: 100,
+                right: 24,
+                bottom: 80,
+              ),
               child: SingleChildScrollView(
                 controller: scrollController,
                 child: Column(
-                  children: [
-                    const SizedBox(height: 240),
-                    const Text(
-                      "Weitere Inhalte hier...",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
+                  children: [SizedBox(height: 450), SizeSelector()],
                 ),
               ),
             );
           },
         ),
 
-        // 🧁 Cupcake-Bild
         Positioned(
           top: -33,
           child: Center(
@@ -57,77 +56,98 @@ class BottomSheetWidget extends StatelessWidget {
           top: 270,
           child: GlassContainer(
             width: 340,
-            height: 328.65,
+            height: 354,
             borderRadius: BorderRadius.circular(30),
             blur: 60,
             borderWidth: 1,
             borderColor: const Color.fromARGB(24, 255, 255, 255),
             color: const Color.fromARGB(5, 255, 255, 255),
             gradient: null,
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.only(
+              top: 16,
+              right: 30,
+              left: 30,
+              bottom: 30,
+            ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      item.name,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "SF Pro Text",
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        "assets/icon/heart.png",
+                        width: 13,
+                        height: 13,
+                        color: const Color(0x60ebebf5),
                       ),
-                    ),
-                    Row(
-                      children: [
-                        Image.asset(
-                          "assets/icon/heart.png",
-                          width: 13,
-                          height: 13,
+                      const SizedBox(width: 4),
+                      Text(
+                        item.likes,
+                        style: const TextStyle(
                           color: Color(0x60ebebf5),
+                          fontFamily: "SF Pro Text",
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
                         ),
-                        SizedBox(width: 4),
-                        Text(
-                          item.likes,
-                          style: TextStyle(color: Color(0x60ebebf5)),
-                        ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
 
-                const SizedBox(height: 8),
-
-                const Text(
-                  "Lorem ipsum dolor sit amet consectetur. Non feugiat imperdiet a vel sit at amet. Mi accumsan feugiat magna aliquam feugiat ac et.",
-                  style: TextStyle(
+                Text(
+                  item.name,
+                  style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 12,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: "Inter",
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const Text(
+                  "Lorem ipsum dolor sit amet consectetur. Non feugiat imperdiet a vel sit at amet. Mi accumsan feugiat magna aliquam feugiat ac et. Pulvinar hendrerit id arcu at sed etiam semper mi hendrerit. Id aliquet quis quam.",
+                  style: TextStyle(
+                    color: Color(0x60ebebf5),
+                    fontSize: 13,
                     fontWeight: FontWeight.w400,
                     fontFamily: "SF Pro Text",
                   ),
+                  textAlign: TextAlign.center,
                 ),
-                Text(
-                  item.price,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: "SF Pro Text",
+
+                const SizedBox(height: 6),
+
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 14,
+                    bottom: 14,
+                    right: 26,
+                    left: 26,
+                  ),
+                  child: Text(
+                    item.price,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "SF Pro Text",
+                      letterSpacing: 0.35,
+                    ),
                   ),
                 ),
 
-                const Divider(color: Colors.white54),
-
+                const Divider(color: Color(0x50FFFFFF), thickness: 0.5),
+                SizedBox(height: 24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Ingredients",
                           style: TextStyle(
                             fontFamily: "SF Pro Text",
@@ -136,35 +156,35 @@ class BottomSheetWidget extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Row(
                           children: [
                             Image.asset(
                               "assets/grafiken/Gluten.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Colors.white,
+                              color: Color(0xFFd9d9d9),
                             ),
-                            SizedBox(width: 7.13),
+                            const SizedBox(width: 7.13),
                             Image.asset(
                               "assets/grafiken/Sugar.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Colors.white,
+                              color: Color(0xFFd9d9d9),
                             ),
-                            SizedBox(width: 7.13),
+                            const SizedBox(width: 7.13),
                             Image.asset(
                               "assets/grafiken/LowFat.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Colors.white,
+                              color: Color(0xFFd9d9d9),
                             ),
-                            SizedBox(width: 7.13),
+                            const SizedBox(width: 7.13),
                             Image.asset(
                               "assets/grafiken/Kcal.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Colors.white,
+                              color: Color(0xFFd9d9d9),
                             ),
                           ],
                         ),
@@ -174,7 +194,7 @@ class BottomSheetWidget extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Reviews",
                           style: TextStyle(
                             fontFamily: "SF Pro Text",
@@ -183,7 +203,7 @@ class BottomSheetWidget extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Row(
                           children: [
                             Image.asset(
@@ -215,8 +235,11 @@ class BottomSheetWidget extends StatelessWidget {
                               width: 12.17,
                               height: 12.17,
                             ),
-                            SizedBox(width: 4),
-                            Text("4.0", style: TextStyle(color: Colors.white)),
+                            const SizedBox(width: 4),
+                            const Text(
+                              "4.0",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ],
                         ),
                       ],
