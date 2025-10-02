@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:snack/presentation/detail_screen.dart";
+import "package:snack/common/bottom_sheet.dart";
 import "package:snack/presentation/home_screen.dart";
 import "package:snack/presentation/splash_screen.dart";
 
@@ -15,9 +15,9 @@ class SnackishApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: "/",
       routes: {
-        "/": (context) => SplashScreen(),
+        "/": (context) => const SplashScreen(),
         "/home": (context) => Homescreen(),
-        "/details": (context) => DetailScreen(),
+        //"/details": (context) => BottomSheetWidget(item: item),
       },
     );
   }

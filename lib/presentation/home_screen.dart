@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snack/common/glass_card.dart';
 import 'package:snack/common/glass_chip.dart';
-import 'package:snack/common/recommend_card.dart';
 import 'package:snack/common/recommend_list.dart';
 
 class Homescreen extends StatelessWidget {
