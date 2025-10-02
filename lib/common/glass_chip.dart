@@ -55,7 +55,7 @@ class _CategorySelectorState extends State<CategorySelector> {
               blur: 60,
               alignment: Alignment.center,
               borderWidth: 1,
-              borderColor: const Color(0x5DFFFFFF),
+              borderColor: const Color.fromARGB(50, 255, 255, 255),
               color: isSelected ? const Color(0xFFEDC7EA) : null,
               gradient: isSelected
                   ? null
