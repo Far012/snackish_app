@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
+import 'package:snack/common/quantity_selector.dart';
 import 'package:snack/common/size_selector.dart';
 import 'package:snack/data/item.dart';
 
@@ -32,7 +33,57 @@ class BottomSheetWidget extends StatelessWidget {
               child: SingleChildScrollView(
                 controller: scrollController,
                 child: Column(
-                  children: [SizedBox(height: 450), SizeSelector()],
+                  children: [
+                    SizedBox(height: 450),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [SizeSelector(), QuantitySelector()],
+                    ),
+                    SizedBox(height: 32),
+                    Container(
+                      width: 340,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFE970C4), Color(0xFFF69EA3)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x80EA71C5),
+                            offset: Offset(0, 10),
+                            blurRadius: 30,
+                          ),
+                        ],
+                      ),
+                      padding: EdgeInsets.all(1.5),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/home");
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Add to order for ${item.price}",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Inter",
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             );

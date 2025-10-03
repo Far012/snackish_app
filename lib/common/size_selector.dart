@@ -8,38 +8,42 @@ class SizeSelector extends StatefulWidget {
 }
 
 class _SizeSelectorSegmentState extends State<SizeSelector> {
-  final List<String> sizes = ['Small', 'Medium', 'Large'];
+  final List<String> sizes = ["Small", "Medium", "Large"];
   int selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       width: 170,
       height: 30,
       decoration: BoxDecoration(
-        color: const Color(0xFF757575),
-        borderRadius: BorderRadius.circular(12),
+        color: const Color(0x24767680),
+        borderRadius: BorderRadius.circular(9),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: List.generate(sizes.length, (index) {
           final bool isSelected = index == selectedIndex;
           return GestureDetector(
             onTap: () => setState(() => selectedIndex = index),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              width: 50,
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(2),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? const Color(0xFF545454)
+                    ? const Color(0xFF636366)
                     : Colors.transparent,
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(9),
               ),
               child: Text(
                 sizes[index],
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: isSelected ? Colors.white : Color(0x60ebebf5),
                   fontSize: 11,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "SF Pro Text",
                 ),
               ),
             ),
