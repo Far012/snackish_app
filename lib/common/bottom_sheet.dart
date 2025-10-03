@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
-import 'package:snack/common/quantity_selector.dart';
-import 'package:snack/common/size_selector.dart';
+import 'package:snack/common/selector._quantity.dart';
+import 'package:snack/common/selector_size.dart';
 import 'package:snack/data/item.dart';
 
 class BottomSheetWidget extends StatelessWidget {
@@ -34,24 +34,24 @@ class BottomSheetWidget extends StatelessWidget {
                 controller: scrollController,
                 child: Column(
                   children: [
-                    SizedBox(height: 450),
+                    const SizedBox(height: 480),
 
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [SizeSelector(), QuantitySelector()],
                     ),
-                    SizedBox(height: 32),
+                    const SizedBox(height: 32),
                     Container(
                       width: 340,
                       height: 48,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [Color(0xFFE970C4), Color(0xFFF69EA3)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Color(0x80EA71C5),
                             offset: Offset(0, 10),
@@ -59,25 +59,20 @@ class BottomSheetWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                      padding: EdgeInsets.all(1.5),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, "/home");
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Add to order for ${item.price}",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Inter",
-                                fontSize: 17,
-                                fontWeight: FontWeight.w600,
-                              ),
+                      padding: const EdgeInsets.all(1.5),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Add to order for ${item.price}",
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontFamily: "Inter",
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
@@ -191,7 +186,7 @@ class BottomSheetWidget extends StatelessWidget {
                 ),
 
                 const Divider(color: Color(0x50FFFFFF), thickness: 0.5),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -214,28 +209,28 @@ class BottomSheetWidget extends StatelessWidget {
                               "assets/grafiken/Gluten.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Color(0xFFd9d9d9),
+                              color: const Color(0xFFd9d9d9),
                             ),
                             const SizedBox(width: 7.13),
                             Image.asset(
                               "assets/grafiken/Sugar.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Color(0xFFd9d9d9),
+                              color: const Color(0xFFd9d9d9),
                             ),
                             const SizedBox(width: 7.13),
                             Image.asset(
                               "assets/grafiken/LowFat.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Color(0xFFd9d9d9),
+                              color: const Color(0xFFd9d9d9),
                             ),
                             const SizedBox(width: 7.13),
                             Image.asset(
                               "assets/grafiken/Kcal.png",
                               width: 18.65,
                               height: 18.65,
-                              color: Color(0xFFd9d9d9),
+                              color: const Color(0xFFd9d9d9),
                             ),
                           ],
                         ),
@@ -298,6 +293,19 @@ class BottomSheetWidget extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+          ),
+        ),
+
+        Positioned(
+          top: 100,
+          left: 348,
+          child: SafeArea(
+            child: IconButton(
+              icon: const Icon(Icons.close, color: Colors.white, size: 30),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
         ),

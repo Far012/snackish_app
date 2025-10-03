@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import "package:snack/common/bottom_sheet.dart";
 import "package:snack/presentation/home_screen.dart";
 import "package:snack/presentation/splash_screen.dart";
 
