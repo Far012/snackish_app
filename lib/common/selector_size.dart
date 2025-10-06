@@ -22,7 +22,7 @@ class _SizeSelectorSegmentState extends State<SizeSelector> {
         borderRadius: BorderRadius.circular(9),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(sizes.length, (index) {
           final bool isSelected = index == selectedIndex;
           return GestureDetector(

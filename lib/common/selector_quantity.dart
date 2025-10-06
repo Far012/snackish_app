@@ -41,6 +41,7 @@ class _QuantitySelectorState extends State<QuantitySelector> {
         const SizedBox(width: 16),
 
         Container(
+          width: 24,
           alignment: Alignment.center,
           child: Text(
             "$quantity",
