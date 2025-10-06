@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
-import 'package:snack/common/selector._quantity.dart';
+import 'package:snack/common/selector_quantity.dart';
 import 'package:snack/common/selector_size.dart';
 import 'package:snack/data/item.dart';
 
@@ -20,21 +20,16 @@ class BottomSheetWidget extends StatelessWidget {
           minChildSize: 0.6,
           builder: (context, scrollController) {
             return Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0xFF2F2B22),
-                borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                borderRadius: BorderRadius.circular(10),
               ),
-              padding: const EdgeInsets.only(
-                left: 24,
-                top: 100,
-                right: 24,
-                bottom: 80,
-              ),
+              padding: const EdgeInsets.only(left: 27, top: 100, right: 26),
               child: SingleChildScrollView(
                 controller: scrollController,
                 child: Column(
                   children: [
-                    const SizedBox(height: 480),
+                    const SizedBox(height: 500),
 
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +37,7 @@ class BottomSheetWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 32),
                     Container(
-                      width: 340,
+                      width: double.infinity,
                       height: 48,
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
@@ -298,11 +293,24 @@ class BottomSheetWidget extends StatelessWidget {
         ),
 
         Positioned(
-          top: 100,
-          left: 348,
-          child: SafeArea(
+          top: 118,
+          left: 358,
+          child: Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              color: Color(0x10FFFFFF),
+              shape: BoxShape.circle,
+              border: BoxBorder.all(color: Color.fromARGB(41, 255, 255, 255)),
+            ),
+
             child: IconButton(
-              icon: const Icon(Icons.close, color: Colors.white, size: 30),
+              padding: EdgeInsets.zero,
+              icon: const Icon(
+                Icons.close,
+                color: Color.fromARGB(251, 156, 155, 155),
+                size: 20,
+              ),
               onPressed: () {
                 Navigator.pop(context);
               },

@@ -22,49 +22,55 @@ class _QuantitySelectorState extends State<QuantitySelector> {
             }
           },
           child: Container(
-            width: 28,
-            height: 28,
+            width: 30,
+            height: 30,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: const Color(0xFF636366),
+              color: const Color(0x10FFFFFF),
+              border: BoxBorder.all(color: Color.fromARGB(41, 255, 255, 255)),
             ),
-            child: const Icon(Icons.remove, color: Colors.white, size: 16),
+            child: const Icon(
+              Icons.remove,
+              color: Color.fromARGB(251, 156, 155, 155),
+              size: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
 
-        const SizedBox(width: 12),
+        const SizedBox(width: 16),
 
         Container(
-          width: 28,
-          height: 28,
           alignment: Alignment.center,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: const Color(0xFF1C1C1E),
-          ),
           child: Text(
             "$quantity",
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
+              fontSize: 17,
+              fontWeight: FontWeight.w700,
               fontFamily: "SF Pro Text",
             ),
           ),
         ),
 
-        const SizedBox(width: 12),
+        const SizedBox(width: 16),
 
         GestureDetector(
           onTap: () => setState(() => quantity++),
           child: Container(
-            width: 28,
-            height: 28,
+            width: 30,
+            height: 30,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: const Color(0xFF636366),
+              color: const Color(0x10FFFFFF),
+              border: BoxBorder.all(color: Color.fromARGB(41, 255, 255, 255)),
             ),
-            child: const Icon(Icons.add, color: Colors.white, size: 16),
+            child: const Icon(
+              Icons.add,
+              color: Color.fromARGB(251, 156, 155, 155),
+              size: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],
