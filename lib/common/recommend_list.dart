@@ -16,7 +16,7 @@ class RecommendCardList extends StatelessWidget {
         itemCount: items.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20, right: 6),
             child: RecommendCardWidget(item: items[index]),
           );
         },
