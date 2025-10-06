@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snack/common/bottom_sheet.dart';
+import 'package:snack/presentation/detail_screen.dart';
 import 'package:snack/data/item.dart';
 
 class RecommendCardWidget extends StatelessWidget {
@@ -28,7 +28,7 @@ class RecommendCardWidget extends StatelessWidget {
             colors: [
               Color(0xFF8c5bea),
               Color.fromARGB(155, 143, 140, 245),
-              Color.fromARGB(18, 255, 255, 255),
+              Color.fromARGB(28, 255, 255, 255),
             ],
           ),
           borderRadius: BorderRadius.circular(30),

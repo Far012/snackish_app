@@ -42,7 +42,7 @@ class SplashScreen extends StatelessWidget {
                 ],
               ),
               child: Opacity(
-                opacity: 0.3,
+                opacity: 0.4,
                 child: Image.asset(
                   "assets/details/snack_snack.png",
                   fit: BoxFit.fill,
@@ -50,50 +50,52 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: 552,
-            left: 25,
-            child: GlassContainer(
-              height: 208,
-              width: 340,
-              borderRadius: BorderRadius.circular(30),
-              blur: 30,
-              padding: const EdgeInsets.all(30),
-              alignment: Alignment.center,
-              borderWidth: 0.2,
-              borderColor: Color(0x4DFFFFFF),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Color(0x03FFFFFF), Color(0x03FFFFFF)],
-              ),
-              child: SizedBox(
-                height: 70,
-                width: 280,
-                child: Column(
-                  children: [
-                    Text(
-                      "Feeling Snackish Today?",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: "Inter",
+          Align(
+            alignment: FractionalOffset(0.5, 0.857),
+            child: Padding(
+              padding: const EdgeInsets.all(25),
+              child: GlassContainer(
+                height: 208,
+                width: double.infinity,
+                borderRadius: BorderRadius.circular(30),
+                blur: 30,
+                padding: const EdgeInsets.all(30),
+                alignment: Alignment.center,
+                borderWidth: 0.4,
+                borderColor: const Color(0x4DFFFFFF),
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0x03FFFFFF), Color(0x03FFFFFF)],
+                ),
+                child: SizedBox(
+                  height: 70,
+                  width: 280,
+                  child: Column(
+                    children: [
+                      const Text(
+                        "Feeling Snackish Today?",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: "Inter",
+                        ),
                       ),
-                    ),
-                    Text(
-                      "Explore Angis's most popular snack selection and get instantly happy",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Color(0xCCFFFFFF),
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: "SF Pro Text",
+                      const Text(
+                        "Explore Angis's most popular snack selection and get instantly happy",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xCCFFFFFF),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: "SF Pro Text",
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 30),
-                    OrderNow(),
-                  ],
+                      const SizedBox(height: 30),
+                      const OrderNow(),
+                    ],
+                  ),
                 ),
               ),
             ),

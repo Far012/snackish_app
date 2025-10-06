@@ -14,9 +14,8 @@ class SnackishApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: "/",
       routes: {
-        "/": (context) => const SplashScreen(),
+        "/": (context) => SplashScreen(),
         "/home": (context) => Homescreen(),
-        //"/details": (context) => BottomSheetWidget(item: item),
       },
     );
   }

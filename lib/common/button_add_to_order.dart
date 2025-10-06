@@ -10,29 +10,22 @@ class AddToOrder extends StatelessWidget {
       height: 40,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFFBB8DE1), Color(0xFF908CF5)],
+          colors: [Color(0xFFEA71C5), Color(0xFF908CF5)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x80EA71C5),
-            offset: Offset(0, 10),
-            blurRadius: 30,
-          ),
-        ],
+        borderRadius: BorderRadius.circular(10),
       ),
-      padding: const EdgeInsets.all(1.5),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, "/details");
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(10),
-          ),
+      padding: const EdgeInsets.all(1),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(0x0000001A),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, "/leer");
+          },
           child: const Center(
             child: Text(
               "Add to order",
